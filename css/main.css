@@ -1,0 +1,150 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+
+}
+body{
+   background-color: #C6E5B1;
+
+}
+
+#grilla {
+    height: 60vh;
+    display: grid;
+    grid-template-areas:
+      "header"
+      "img"
+      "nav"
+      "titulo"
+      "main"
+      "footer";
+    grid-template-rows: repeat(6, 1fr); 
+    grid-template-columns: 1fr;
+
+ }
+
+
+header {
+   grid-area: header;
+}
+
+header h1{
+  grid-area: tituloMarca;
+  text-align: center;
+  font-family: 'Freckle Face', cursive;
+  font-size: 4em;
+  color: #EF763D;
+  background-color: white;
+
+}
+
+footer {
+   grid-area: footer;
+}
+
+main {
+   grid-area: main;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+main img{
+  width: 30%;
+  height: 30%;
+  margin: 5px;
+}
+
+#img {
+  grid-area: img;
+
+}
+
+#img img{
+
+  display: none;
+
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+   grid-area: nav;
+   background-color: #ee7339dc;
+}
+
+nav ul{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+nav ul li{
+
+  list-style: none;
+  margin: 0.8em;
+  padding: 0.3em;
+  text-transform: uppercase;
+  background-color: whitesmoke;
+  border: 0.3rem solid whitesmoke;
+  border-radius: 2rem;
+  
+  
+} 
+
+nav ul li a{
+  
+  text-align: center;
+}
+
+#titulo {
+
+    grid-area: titulo;
+    text-align: center;
+    font-family: 'Freckle Face', cursive;
+    font-size: 2rem;
+    color: #EF763D;
+
+}
+
+
+
+@media only screen and (min-width:600px) {
+    #grilla {
+        height: 80vh;
+        display: grid;
+        grid-template-areas:
+        "header header"
+        "nav img"
+        "titulo titulo"
+        "main main"
+        "footer footer";
+        grid-template-rows: repeat(5, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
+     }
+#img img{
+   display: block;
+}
+
+
+}
+
+
+@media only screen and (min-width:1024px) {
+    #grilla {
+        height: 100vh;
+        display: grid;
+        grid-template-areas:
+        "header header header header"
+        "img img img img"
+        "nav nav nav nav"        
+        "titulo titulo titulo titulo"
+        "main main main main"
+        "footer footer footer footer";
+        grid-template-rows: repeat(6, 1fr); 
+        grid-template-columns: repeat(4, 1fr);
+     }
+
+     #img img{
+        height: 80vh;
+     }
+}
